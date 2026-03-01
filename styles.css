@@ -1,0 +1,315 @@
+/* ============================================
+   ORG DESIGN MAGAZINE - Styles
+   ============================================ */
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #faf8f4;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.animate-fade-right {
+    animation: fadeRight 0.6s ease forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease forwards;
+}
+
+/* Scroll Animations - Initial State */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Article Section Transitions */
+.article-section {
+    position: relative;
+    transition: background-color 0.5s ease;
+}
+
+/* Drop Cap - First Letter Styling */
+.first-letter\:text-7xl:first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    float: left;
+    margin-right: 0.75rem;
+    margin-top: -0.5rem;
+}
+
+/* Pull Quotes */
+.pull-quote {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.pull-quote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 1;
+    opacity: 0.1;
+}
+
+/* Reading Progress Bar */
+#progress-bar {
+    background: linear-gradient(90deg, #1152d4, #0f766e);
+    transition: width 0.3s ease;
+}
+
+/* Floating TOC */
+#floating-toc {
+    transition: all 0.3s ease;
+}
+
+#floating-toc.hidden {
+    opacity: 0;
+    transform: translateX(-20px);
+    pointer-events: none;
+}
+
+.toc-link.active {
+    background-color: rgba(17, 82, 212, 0.1);
+    color: #1152d4 !important;
+}
+
+.toc-link.active span {
+    background-color: #1152d4;
+    color: white !important;
+}
+
+/* Index Cards */
+.index-card {
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.index-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Quiz Styles */
+.quiz-option {
+    transition: all 0.3s ease;
+}
+
+.quiz-option:hover {
+    border-color: #1152d4;
+    transform: translateX(4px);
+}
+
+.quiz-question input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.quiz-question input[type="radio"]:checked {
+    border-color: #1152d4;
+    background: #1152d4;
+    box-shadow: inset 0 0 0 4px #fff;
+}
+
+.quiz-question input[type="radio"]:hover {
+    border-color: #1152d4;
+}
+
+.quiz-question label:has(input[type="radio"]:checked) {
+    background: #eff6ff;
+    border-color: #1152d4;
+}
+
+.dark .quiz-question label:has(input[type="radio"]:checked) {
+    background: rgba(17, 82, 212, 0.15);
+    border-color: #1152d4;
+}
+
+/* Result Modal */
+#result-modal {
+    transition: opacity 0.3s ease;
+}
+
+#result-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#result-modal:not(.hidden) #result-content {
+    animation: scaleIn 0.4s ease;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu.hidden {
+    display: none;
+}
+
+/* Hero Parallax Effect */
+#hero img {
+    animation: subtleZoom 20s ease infinite alternate;
+}
+
+@keyframes subtleZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Focus States */
+input:focus,
+a:focus,
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(17, 82, 212, 0.3);
+}
+
+/* Dark Mode Adjustments */
+.dark body {
+    background-color: #0f172a;
+}
+
+.dark .bg-magazine-bg {
+    background-color: #0f172a;
+}
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+}
+
+/* Number Circles in Articles */
+.article-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Smooth Image Loading */
+img {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+img[loading] {
+    opacity: 0;
+}
+
+/* Stagger Animation Delays for Index Cards */
+.index-card:nth-child(1) { animation-delay: 0s; }
+.index-card:nth-child(2) { animation-delay: 0.1s; }
+.index-card:nth-child(3) { animation-delay: 0.2s; }
+.index-card:nth-child(4) { animation-delay: 0.3s; }
+.index-card:nth-child(5) { animation-delay: 0.4s; }
+.index-card:nth-child(6) { animation-delay: 0.5s; }
+
+/* Print Styles */
+@media print {
+    nav, #floating-toc, #progress-bar, .animate-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .article-section {
+        break-inside: avoid;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}

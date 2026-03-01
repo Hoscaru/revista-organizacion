@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrgDesign Magazine</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1152d4",
+                        "primary-dark": "#0d3a94",
+                        secondary: "#0f766e",
+                        accent: "#f59e0b",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#0f172a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "magazine-bg": "#faf8f4",
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"],
+                        body: ["Manrope", "sans-serif"],
+                        serif: ["Playfair Display", "serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-magazine-bg dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3 cursor-pointer" id="nav-logo">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white">
+                        <span class="material-symbols-outlined text-[22px]">domain</span>
+                    </div>
+                    <div>
+                        <span
+                            class="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-serif">OrgDesign</span>
+                        <span
+                            class="hidden sm:block text-[10px] uppercase tracking-[0.2em] text-slate-400 ml-2">Magazine</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-1">
+                    <a class="nav-link px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                        href="#hero">Portada</a>
+                    <a class="nav-link px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                        href="#indice">Índice</a>
+                    <a class="nav-link px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                        href="#quiz">Quiz</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-slate-600 dark:text-slate-300 p-2" id="mobile-menu-btn">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800"
+            id="mobile-menu">
+            <div class="px-4 py-3 space-y-1">
+                <a class="block px-3 py-2 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg"
+                    href="#hero">Portada</a>
+                <a class="block px-3 py-2 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg"
+                    href="#indice">Índice</a>
+                <a class="block px-3 py-2 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg"
+                    href="#quiz">Quiz</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reading Progress -->
+    <div class="fixed top-16 left-0 right-0 h-1 bg-slate-200 dark:bg-slate-800 z-40">
+        <div class="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-300" id="progress-bar"
+            style="width: 0%"></div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-end">
+        <div class="absolute inset-0 overflow-hidden">
+            <img alt="Corporate building" class="w-full h-full object-cover transform scale-105"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-32 w-full">
+            <div class="max-w-4xl animate-fade-up">
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-secondary/90 backdrop-blur-sm rounded-full text-white text-xs font-bold tracking-[0.15em] uppercase mb-6">
+                    <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    Edición Especial
+                </span>
+
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] mb-6">
+                    Diseño<br />Organizacional
+                </h1>
+
+                <p class="text-xl md:text-2xl text-white/80 font-light leading-relaxed max-w-2xl mb-8">
+                    Una guía profunda sobre cómo las empresas se estructuran para el éxito en el siglo XXI.
+                </p>
+
+                <div class="flex flex-wrap gap-6 text-white/70 text-sm">
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        Marzo 2026
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+                        6 Artículos
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">schedule</span>
+                        15 min lectura
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <span class="material-symbols-outlined text-white/50 text-3xl">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+    <!-- FLOATING TABLE OF CONTENTS -->
+    <aside class="fixed right-6 top-1/2 -translate-y-1/2 z-30 hidden lg:block" id="floating-toc">
+        <div
+            class="bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 p-4">
+            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-3">Contenido</p>
+            <nav class="space-y-1" id="toc-nav">
+                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                    href="#article-1">
+                    <span
+                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">01</span>
+                    Evolución
+                </a>
+                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                    href="#article-2">
+                    <span
+                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">02</span>
+                    Estructura
+                </a>
+                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                    href="#article-3">
+                    <span
+                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">03</span>
+                    Elementos
+                </a>
+                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                    href="#article-4">
+                    <span
+                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">04</span>
+                    Proceso
+                </a>
+                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                    href="#article-5">
+                    <span
+                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">05</span>
+                    Diseño
+                </a>
+                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                    href="#article-6">
+                    <span
+                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">06</span>
+                    Pilares
+                </a>
+            </nav>
+            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+                <a class="flex items-center gap-2 px-3 py-2 text-xs font-bold text-primary hover:bg-primary/10 transition-colors rounded-lg"
+                    href="#quiz">
+                    <span class="material-symbols-outlined text-[16px]">quiz</span>
+                    Hacer Quiz
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-8">
+        <!-- INDICE SECTION -->
+        <section id="indice" class="py-16 bg-surface-light dark:bg-surface-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <span
+                        class="inline-block px-3 py-1 text-xs font-bold tracking-widest text-primary uppercase bg-primary/10 rounded-full mb-4">Contenido</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Índice
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">Explora los temas que conforman esta
+                        edición especial sobre diseño y estructura organizacional.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="#article-1"
+                        class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll">
+                        <div
+                            class="h-32 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
+                            <span
+                                class="material-symbols-outlined text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500">trending_up</span>
+                            <span class="absolute top-3 left-3 text-4xl font-serif font-bold text-primary/20">01</span>
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                                De la Pirámide a la Red</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Evolución de las formas organizativas
+                                desde Taylor hasta hoy.</p>
+                        </div>
+                    </a>
+
+                    <a href="#article-2"
+                        class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll"
+                        style="animation-delay: 0.1s">
+                        <div
+                            class="h-32 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center relative overflow-hidden">
+                            <span
+                                class="material-symbols-outlined text-6xl text-purple-500/30 group-hover:scale-110 transition-transform duration-500">schema</span>
+                            <span
+                                class="absolute top-3 left-3 text-4xl font-serif font-bold text-purple-500/20">02</span>
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 transition-colors">
+                                El Esqueleto de la Empresa</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Definición y tipos de estructuras
+                                organizacionales.</p>
+                        </div>
+                    </a>
+
+                    <a href="#article-3"
+                        class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll"
+                        style="animation-delay: 0.2s">
+                        <div
+                            class="h-32 bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center relative overflow-hidden">
+                            <span
+                                class="material-symbols-outlined text-6xl text-orange-500/30 group-hover:scale-110 transition-transform duration-500">help</span>
+                            <span
+                                class="absolute top-3 left-3 text-4xl font-serif font-bold text-orange-500/20">03</span>
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 transition-colors">
+                                Forma vs Estructura</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">La distinción vital entre estos
+                                conceptos clave.</p>
+                        </div>
+                    </a>
+
+                    <a href="#article-4"
+                        class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll"
+                        style="animation-delay: 0.3s">
+                        <div
+                            class="h-32 bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center relative overflow-hidden">
+                            <span
+                                class="material-symbols-outlined text-6xl text-green-500/30 group-hover:scale-110 transition-transform duration-500">construction</span>
+                            <span
+                                class="absolute top-3 left-3 text-4xl font-serif font-bold text-green-500/20">04</span>
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-green-600 transition-colors">
+                                Arquitectura de Negocios</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Etapas del proceso de diseño
+                                organizacional.</p>
+                        </div>
+                    </a>
+
+                    <a href="#article-5"
+                        class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll"
+                        style="animation-delay: 0.4s">
+                        <div
+                            class="h-32 bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center relative overflow-hidden">
+                            <span
+                                class="material-symbols-outlined text-6xl text-pink-500/30 group-hover:scale-110 transition-transform duration-500">sync_alt</span>
+                            <span class="absolute top-3 left-3 text-4xl font-serif font-bold text-pink-500/20">05</span>
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-pink-600 transition-colors">
+                                Diseño vs Estructura</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">El proceso frente al resultado.</p>
+                        </div>
+                    </a>
+
+                    <a href="#article-6"
+                        class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll"
+                        style="animation-delay: 0.5s">
+                        <div
+                            class="h-32 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center relative overflow-hidden">
+                            <span
+                                class="material-symbols-outlined text-6xl text-cyan-500/30 group-hover:scale-110 transition-transform duration-500">foundation</span>
+                            <span class="absolute top-3 left-3 text-4xl font-serif font-bold text-cyan-500/20">06</span>
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 transition-colors">
+                                Los Tres Pilares</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Estrategia, tamaño y tecnología.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTICLE 1 -->
+        <article id="article-1" class="article-section py-20 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2 hidden lg:block">
+                        <span class="font-serif text-8xl font-bold text-primary/10 leading-none">01</span>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <header class="mb-12 animate-on-scroll">
+                            <span
+                                class="inline-block px-3 py-1 text-xs font-bold tracking-widest text-primary uppercase bg-primary/10 rounded-full mb-4">Artículo</span>
+                            <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">De
+                                la Pirámide a la Red</h2>
+                            <p class="text-xl text-slate-600 dark:text-slate-300 font-serif italic">El viaje de la
+                                organización a través de los siglos</p>
+                        </header>
+
+                        <div
+                            class="article-content text-lg text-slate-700 dark:text-slate-300 leading-relaxed space-y-6">
+                            <p
+                                class="first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">
+                                Desde la administración científica de Taylor hasta las organizaciones "líquidas" de la
+                                actualidad, la forma de agrupar personas ha cambiado drásticamente. En la era clásica,
+                                la rigidez era ley; hoy, la agilidad es supervivencia. Analizamos cómo las estructuras
+                                pasaron de ser jerarquías cerradas a ecosistemas colaborativos globales.
+                            </p>
+
+                            <p>La organización empresarial ha evolucionado a través de distintas eras, cada una marcada
+                                por un paradigma diferente de cómo concebir el trabajo y las relaciones humanas dentro
+                                de las instituciones.</p>
+
+                            <blockquote class="pull-quote border-l-4 border-primary pl-6 py-2 my-8">
+                                <p class="font-serif text-2xl text-slate-900 dark:text-white italic">"La organización
+                                    perfecta era aquella donde cada persona conocía su lugar, su tarea y su jefe."</p>
+                            </blockquote>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">La Era de
+                                la Rigidez</h3>
+                            <p>A finales del siglo XIX y principios del XX, las organizaciones adoptaron estructuras
+                                jerárquicas estrictas. Frederick Winslow Taylor revolucionó la administración con sus
+                                principios de eficiencia, dividiendo el trabajo en tareas específicas y especializadas.
+                                El modelo de pirámide jerárquica dominó el panorama empresarial durante décadas.</p>
+
+                            <div class="my-10 rounded-xl overflow-hidden shadow-lg">
+                                <img alt="Old factory workers" class="w-full h-64 object-cover"
+                                    src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80" />
+                                <p
+                                    class="text-sm text-slate-500 dark:text-slate-400 p-3 bg-slate-100 dark:bg-slate-800">
+                                    Trabajo industrial en cadena, símbolo de la era taylorista</p>
+                            </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">La
+                                Revolución Flexible</h3>
+                            <p>Con la llegada de la era digital y la globalización, las estructuras rígidas comenzaron a
+                                mostrar sus limitaciones. Las organizaciones necesitaban adaptarse rápidamente a los
+                                cambios del mercado, lo que dio origen a modelos más flexibles y horizontales.</p>
+
+                            <ul class="grid sm:grid-cols-2 gap-4 my-8">
+                                <li class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                    <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                    <span class="text-slate-700 dark:text-slate-300">Organizaciones planas con menos
+                                        niveles</span>
+                                </li>
+                                <li class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                    <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                    <span class="text-slate-700 dark:text-slate-300">Equipos autónomos y
+                                        multifuncionales</span>
+                                </li>
+                                <li class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                    <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                    <span class="text-slate-700 dark:text-slate-300">Redes colaborativas globales</span>
+                                </li>
+                                <li class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                    <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                    <span class="text-slate-700 dark:text-slate-300">Toma de decisiones
+                                        distribuida</span>
+                                </li>
+                            </ul>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">Las
+                                Organizaciones del Futuro</h3>
+                            <p>Las organizaciones "líquidas" de hoy son ecosistemas dinámicos que pueden reconfigurarse
+                                según las necesidades. La clave ya no es la estabilidad, sino la capacidad de adaptación
+                                continua. Empresas como Spotify, Netflix y Airbnb ejemplifican estos nuevos modelos
+                                organizativos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTICLE 2 -->
+        <article id="article-2" class="article-section py-20 bg-white dark:bg-slate-800/50 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2 hidden lg:block">
+                        <span class="font-serif text-8xl font-bold text-purple-500/10 leading-none">02</span>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <header class="mb-12 animate-on-scroll">
+                            <span
+                                class="inline-block px-3 py-1 text-xs font-bold tracking-widest text-purple-600 uppercase bg-purple-100 dark:bg-purple-900/30 rounded-full mb-4">Artículo</span>
+                            <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">El
+                                Esqueleto de la Empresa</h2>
+                            <p class="text-xl text-slate-600 dark:text-slate-300 font-serif italic">Definición y tipos
+                                de estructuras organizacionales</p>
+                        </header>
+
+                        <div
+                            class="article-content text-lg text-slate-700 dark:text-slate-300 leading-relaxed space-y-6">
+                            <p
+                                class="first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-purple-600 first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">
+                                La estructura es el marco formal mediante el cual las tareas se dividen, agrupan y
+                                coordinan. Sin una estructura clara, el propósito de la empresa se diluye en el caos.
+                                Exploramos por qué una buena estructura es el primer paso hacia la eficiencia operativa.
+                            </p>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">
+                                Estructura Lineal</h3>
+                            <p>También conocida como estructura de mando, es el modelo más antiguo y simple. Cada
+                                departamento tiene un líder que reporta directamente al siguiente nivel superior. Es
+                                ideal para organizaciones pequeñas.</p>
+
+                            <div class="my-8 p-6 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
+                                <h4 class="font-bold text-purple-700 dark:text-purple-300 mb-3">Ventajas</h4>
+                                <ul class="grid sm:grid-cols-2 gap-2 text-purple-600 dark:text-purple-400">
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-sm">arrow_right</span> Claridad en las
+                                        jerarquías</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-sm">arrow_right</span> Toma de
+                                        decisiones rápida</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-sm">arrow_right</span> Fácil de
+                                        implementar</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-sm">arrow_right</span> Control
+                                        centralizado</li>
+                                </ul>
+                            </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">
+                                Estructura Funcional</h3>
+                            <p>Las actividades se agrupan por funciones o especialidades: finanzas, marketing,
+                                producción, recursos humanos. Permite aprovechar economías de escala y desarrollar
+                                expertise profundo en cada área.</p>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">
+                                Estructura Matricial</h3>
+                            <p>Combina dos dimensiones: funciones y productos o proyectos. Los empleados pueden reportar
+                                a dos jefes simultáneamente, aumentando la complejidad pero también la flexibilidad y
+                                utilización de recursos.</p>
+
+                            <blockquote class="pull-quote border-l-4 border-purple-500 pl-6 py-2 my-8">
+                                <p class="font-serif text-2xl text-slate-900 dark:text-white italic">"La mejor
+                                    estructura es aquella que se adapta a la estrategia, no la que la limita."</p>
+                            </blockquote>
+
+                            <div class="overflow-x-auto my-10">
+                                <table class="w-full text-sm">
+                                    <thead>
+                                        <tr class="bg-slate-100 dark:bg-slate-700">
+                                            <th class="text-left p-4 font-bold">Tipo</th>
+                                            <th class="text-left p-4 font-bold">Complejidad</th>
+                                            <th class="text-left p-4 font-bold">Flexibilidad</th>
+                                            <th class="text-left p-4 font-bold">Mejor Para</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-200 dark:divide-slate-600">
+                                        <tr>
+                                            <td class="p-4">Lineal</td>
+                                            <td class="p-4"><span class="text-red-500">●</span> Baja</td>
+                                            <td class="p-4"><span class="text-red-500">●</span> Baja</td>
+                                            <td class="p-4">Pequeñas empresas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4">Funcional</td>
+                                            <td class="p-4"><span class="text-yellow-500">●</span> Media</td>
+                                            <td class="p-4"><span class="text-yellow-500">●</span> Media</td>
+                                            <td class="p-4">Empresas medianas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4">Matricial</td>
+                                            <td class="p-4"><span class="text-green-500">●</span> Alta</td>
+                                            <td class="p-4"><span class="text-green-500">●</span> Alta</td>
+                                            <td class="p-4">Grandes corporaciones</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTICLE 3 -->
+        <article id="article-3" class="article-section py-20 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2 hidden lg:block">
+                        <span class="font-serif text-8xl font-bold text-orange-500/10 leading-none">03</span>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <header class="mb-12 animate-on-scroll">
+                            <span
+                                class="inline-block px-3 py-1 text-xs font-bold tracking-widest text-orange-600 uppercase bg-orange-100 dark:bg-orange-900/30 rounded-full mb-4">Artículo</span>
+                            <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+                                Forma vs Estructura</h2>
+                            <p class="text-xl text-slate-600 dark:text-slate-300 font-serif italic">La distinción vital
+                                que pocos conocen</p>
+                        </header>
+
+                        <div
+                            class="article-content text-lg text-slate-700 dark:text-slate-300 leading-relaxed space-y-6">
+                            <p
+                                class="first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-orange-600 first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">
+                                Muchos confunden estos términos, pero hay una distinción vital. Mientras que la "forma"
+                                se refiere a la configuración externa y legal, la "estructura" es el sistema interno de
+                                relaciones. Los elementos como la cadena de mando, el tramo de control y la
+                                centralización son los ladrillos de esta arquitectura empresarial.
+                            </p>
+
+                            <div class="grid md:grid-cols-2 gap-6 my-10">
+                                <div
+                                    class="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-xl border-l-4 border-orange-500">
+                                    <h3 class="font-serif text-xl font-bold text-orange-700 dark:text-orange-300 mb-3">
+                                        Forma Organizacional</h3>
+                                    <p class="text-orange-600 dark:text-orange-400">Se refiere a la configuración
+                                        externa, el marco legal, el tipo de sociedad, los documentos constitutivos. Es
+                                        "lo que se ve desde afuera".</p>
+                                </div>
+                                <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-xl border-l-4 border-red-500">
+                                    <h3 class="font-serif text-xl font-bold text-red-700 dark:text-red-300 mb-3">
+                                        Estructura Organizacional</h3>
+                                    <p class="text-red-600 dark:text-red-400">Es el sistema interno de relaciones, la
+                                        cadena de mando, los departamentos, los flujos de trabajo. Es "cómo funciona por
+                                        dentro".</p>
+                                </div>
+                            </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">Elementos
+                                de la Estructura</h3>
+
+                            <div class="space-y-4 my-8">
+                                <div
+                                    class="bg-slate-50 dark:bg-slate-800 p-5 rounded-xl hover:shadow-lg transition-shadow">
+                                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                                        <span
+                                            class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">1</span>
+                                        Cadena de Mando
+                                    </h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">La línea de autoridad que
+                                        conecta cada nivel jerárquico con el siguiente.</p>
+                                </div>
+                                <div
+                                    class="bg-slate-50 dark:bg-slate-800 p-5 rounded-xl hover:shadow-lg transition-shadow">
+                                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                                        <span
+                                            class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">2</span>
+                                        Tramo de Control
+                                    </h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">El número de subordinados que
+                                        reporta directamente a un gerente.</p>
+                                </div>
+                                <div
+                                    class="bg-slate-50 dark:bg-slate-800 p-5 rounded-xl hover:shadow-lg transition-shadow">
+                                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                                        <span
+                                            class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">3</span>
+                                        Centralización
+                                    </h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">El grado en que las decisiones
+                                        se toman en los niveles superiores.</p>
+                                </div>
+                                <div
+                                    class="bg-slate-50 dark:bg-slate-800 p-5 rounded-xl hover:shadow-lg transition-shadow">
+                                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                                        <span
+                                            class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">4</span>
+                                        Departamentalización
+                                    </h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">La forma en que las
+                                        actividades se agrupan en unidades.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTICLE 4 -->
+        <article id="article-4" class="article-section py-20 bg-white dark:bg-slate-800/50 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2 hidden lg:block">
+                        <span class="font-serif text-8xl font-bold text-green-500/10 leading-none">04</span>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <header class="mb-12 animate-on-scroll">
+                            <span
+                                class="inline-block px-3 py-1 text-xs font-bold tracking-widest text-green-600 uppercase bg-green-100 dark:bg-green-900/30 rounded-full mb-4">Artículo</span>
+                            <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+                                Arquitectura de Negocios</h2>
+                            <p class="text-xl text-slate-600 dark:text-slate-300 font-serif italic">Etapas del diseño
+                                organizacional</p>
+                        </header>
+
+                        <div
+                            class="article-content text-lg text-slate-700 dark:text-slate-300 leading-relaxed space-y-6">
+                            <p
+                                class="first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-green-600 first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">
+                                Diseñar no es solo dibujar un organigrama. Es un proceso que inicia con la definición de
+                                objetivos y pasa por la identificación de actividades esenciales. Según Chiavenato, el
+                                diseño debe ser dinámico y adaptarse a las contingencias del entorno para no quedar
+                                obsoleto.
+                            </p>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">El Modelo
+                                de Chiavenato</h3>
+                            <p>El proceso de diseño organizacional según el reconocido autor Idalberto Chiavenato sigue
+                                cinco etapas fundamentales que garantizan una estructura coherente con los objetivos
+                                empresariales.</p>
+
+                            <div class="space-y-4 my-10">
+                                <div class="flex gap-4 items-start animate-fade-right">
+                                    <span
+                                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 font-bold text-lg">1</span>
+                                    <div class="pt-2">
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">Definir Objetivos
+                                        </h4>
+                                        <p class="text-slate-600 dark:text-slate-400">Establecer qué quiere lograr la
+                                            organización a corto y largo plazo.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start animate-fade-right" style="animation-delay: 0.1s">
+                                    <span
+                                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 font-bold text-lg">2</span>
+                                    <div class="pt-2">
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">Identificar
+                                            Actividades</h4>
+                                        <p class="text-slate-600 dark:text-slate-400">Determinar las tareas necesarias
+                                            para alcanzar los objetivos.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start animate-fade-right" style="animation-delay: 0.2s">
+                                    <span
+                                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 font-bold text-lg">3</span>
+                                    <div class="pt-2">
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">Agrupar Actividades
+                                        </h4>
+                                        <p class="text-slate-600 dark:text-slate-400">Crear departamentos o unidades
+                                            según criterios de eficiencia.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start animate-fade-right" style="animation-delay: 0.3s">
+                                    <span
+                                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 font-bold text-lg">4</span>
+                                    <div class="pt-2">
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">Asignar Recursos
+                                        </h4>
+                                        <p class="text-slate-600 dark:text-slate-400">Distribuir personas, presupuesto y
+                                            herramientas a cada área.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start animate-fade-right" style="animation-delay: 0.4s">
+                                    <span
+                                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 font-bold text-lg">5</span>
+                                    <div class="pt-2">
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">Establecer
+                                            Relaciones</h4>
+                                        <p class="text-slate-600 dark:text-slate-400">Definir líneas de comunicación y
+                                            coordinación entre áreas.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-6 mt-8">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-green-600 text-2xl">lightbulb</span>
+                                    <div>
+                                        <h4 class="font-bold text-green-700 dark:text-green-300 mb-2">Nota Importante
+                                        </h4>
+                                        <p class="text-green-600 dark:text-green-400">El diseño debe ser dinámico y
+                                            adaptarse a las contingencias del entorno para no quedar obsoleto.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTICLE 5 -->
+        <article id="article-5" class="article-section py-20 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2 hidden lg:block">
+                        <span class="font-serif text-8xl font-bold text-pink-500/10 leading-none">05</span>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <header class="mb-12 animate-on-scroll">
+                            <span
+                                class="inline-block px-3 py-1 text-xs font-bold tracking-widest text-pink-600 uppercase bg-pink-100 dark:bg-pink-900/30 rounded-full mb-4">Artículo</span>
+                            <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+                                Diseño vs Estructura</h2>
+                            <p class="text-xl text-slate-600 dark:text-slate-300 font-serif italic">El proceso frente al
+                                resultado</p>
+                        </header>
+
+                        <div
+                            class="article-content text-lg text-slate-700 dark:text-slate-300 leading-relaxed space-y-6">
+                            <p
+                                class="first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-pink-600 first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">
+                                El diseño organizacional es el proceso (la acción de construir), mientras que la
+                                estructura es el resultado (el edificio terminado). Aquí analizamos por qué los gerentes
+                                deben enfocarse en el diseño continuo y no solo en mantener una estructura estática que
+                                no responde a los cambios del mercado.
+                            </p>
+
+                            <div class="grid md:grid-cols-2 gap-8 my-10">
+                                <div
+                                    class="text-center p-6 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl text-white">
+                                    <span class="material-symbols-outlined text-5xl mb-3">settings</span>
+                                    <h3 class="font-serif text-xl font-bold mb-2">Diseño</h3>
+                                    <p class="text-white/80 text-sm">Proceso continuo y dinámico. Se enfoca en adaptar
+                                        la organización al cambio.</p>
+                                </div>
+                                <div
+                                    class="text-center p-6 bg-gradient-to-br from-rose-500 to-red-500 rounded-xl text-white">
+                                    <span class="material-symbols-outlined text-5xl mb-3">account_tree</span>
+                                    <h3 class="font-serif text-xl font-bold mb-2">Estructura</h3>
+                                    <p class="text-white/80 text-sm">Resultado estático. Se representa en organigramas y
+                                        manuales.</p>
+                                </div>
+                            </div>
+
+                            <blockquote class="pull-quote border-l-4 border-pink-500 pl-6 py-2 my-8">
+                                <p class="font-serif text-2xl text-slate-900 dark:text-white italic">"Si la estructura
+                                    es una fotografía de una casa, el diseño es el proceso de arquitectar, construir y
+                                    renovar esa casa a lo largo del tiempo."</p>
+                            </blockquote>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">¿Por qué
+                                importa esta distinción?</h3>
+                            <p>Los gerentes deben enfocarse en el diseño continuo y no solo en mantener una estructura
+                                estática que no responde a los cambios del mercado. La verdadera competitividad viene de
+                                la capacidad de redesignar constantemente la organización.</p>
+
+                            <ul class="space-y-3 my-6">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-pink-500 mt-1">arrow_forward</span>
+                                    <span class="text-slate-700 dark:text-slate-300">El diseño considera personas,
+                                        procesos y cultura</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-pink-500 mt-1">arrow_forward</span>
+                                    <span class="text-slate-700 dark:text-slate-300">La estructura define jerarquías y
+                                        cadenas de mando</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-pink-500 mt-1">arrow_forward</span>
+                                    <span class="text-slate-700 dark:text-slate-300">El diseño debe evolucionar con el
+                                        entorno</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTICLE 6 -->
+        <article id="article-6" class="article-section py-20 bg-white dark:bg-slate-800/50 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2 hidden lg:block">
+                        <span class="font-serif text-8xl font-bold text-cyan-500/10 leading-none">06</span>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <header class="mb-12 animate-on-scroll">
+                            <span
+                                class="inline-block px-3 py-1 text-xs font-bold tracking-widest text-cyan-600 uppercase bg-cyan-100 dark:bg-cyan-900/30 rounded-full mb-4">Artículo</span>
+                            <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+                                Los Tres Pilares</h2>
+                            <p class="text-xl text-slate-600 dark:text-slate-300 font-serif italic">Estrategia, tamaño y
+                                tecnología</p>
+                        </header>
+
+                        <div
+                            class="article-content text-lg text-slate-700 dark:text-slate-300 leading-relaxed space-y-6">
+                            <p
+                                class="first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-cyan-600 first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">
+                                Ninguna estructura nace en el vacío. La estrategia define hacia dónde vamos, el tamaño
+                                dicta la complejidad de la jerarquía y la tecnología actúa como el habilitador que
+                                permite nuevas formas de trabajo. Sin alineación entre estos tres, la estructura
+                                colapsará.
+                            </p>
+
+                            <div class="grid md:grid-cols-3 gap-6 my-10">
+                                <div
+                                    class="text-center p-6 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl hover:shadow-lg transition-shadow">
+                                    <span class="material-symbols-outlined text-5xl text-cyan-600 mb-4">flag</span>
+                                    <h3 class="font-bold text-cyan-700 dark:text-cyan-300 mb-2">Estrategia</h3>
+                                    <p class="text-sm text-cyan-600 dark:text-cyan-400">Define hacia dónde vamos y cómo
+                                        competimos en el mercado.</p>
+                                </div>
+                                <div
+                                    class="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl hover:shadow-lg transition-shadow">
+                                    <span class="material-symbols-outlined text-5xl text-blue-600 mb-4">group</span>
+                                    <h3 class="font-bold text-blue-700 dark:text-blue-300 mb-2">Tamaño</h3>
+                                    <p class="text-sm text-blue-600 dark:text-blue-400">Dicta la complejidad de la
+                                        jerarquía y los niveles de gestión.</p>
+                                </div>
+                                <div
+                                    class="text-center p-6 bg-sky-50 dark:bg-sky-900/20 rounded-xl hover:shadow-lg transition-shadow">
+                                    <span class="material-symbols-outlined text-5xl text-sky-600 mb-4">computer</span>
+                                    <h3 class="font-bold text-sky-700 dark:text-sky-300 mb-2">Tecnología</h3>
+                                    <p class="text-sm text-sky-600 dark:text-sky-400">Habilita nuevas formas de trabajo
+                                        y colaboración.</p>
+                                </div>
+                            </div>
+
+                            <blockquote class="pull-quote border-l-4 border-cyan-500 pl-6 py-2 my-8">
+                                <p class="font-serif text-2xl text-slate-900 dark:text-white italic">"La estructura
+                                    sigue a la estrategia."</p>
+                                <cite class="text-sm text-slate-500 mt-2 block">— Alfred Chandler</cite>
+                            </blockquote>
+
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4">La
+                                Tecnología como Habilitador</h3>
+                            <p>La tecnología moderna ha permitido nuevas formas de trabajo que antes eran impensables:
+                            </p>
+
+                            <ul class="space-y-3 my-6">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-cyan-500 mt-1">wifi</span>
+                                    <span class="text-slate-700 dark:text-slate-300">Trabajo remoto y equipos
+                                        distribuidos geográficamente</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-cyan-500 mt-1">schedule</span>
+                                    <span class="text-slate-700 dark:text-slate-300">Colaboración asíncrona en
+                                        diferentes zonas horarias</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-cyan-500 mt-1">cloud</span>
+                                    <span class="text-slate-700 dark:text-slate-300">Sistemas en la nube que eliminan
+                                        barreras físicas</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-cyan-500 mt-1">psychology</span>
+                                    <span class="text-slate-700 dark:text-slate-300">IA y automatización de procesos de
+                                        decisión</span>
+                                </li>
+                            </ul>
+
+                            <div
+                                class="bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-200 dark:border-cyan-800 rounded-xl p-6 mt-8">
+                                <h4 class="font-bold text-cyan-700 dark:text-cyan-300 mb-2">Conclusión</h4>
+                                <p class="text-cyan-600 dark:text-cyan-400">Sin alineación entre estrategia, tamaño y
+                                    tecnología, la estructura colapsará. Los líderes deben mantener estos tres pilares
+                                    en equilibrio constante.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="py-20 bg-gradient-to-br from-primary via-primary-dark to-secondary scroll-mt-24">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <span
+                        class="inline-block px-3 py-1 text-xs font-bold tracking-widest text-white uppercase bg-white/20 rounded-full mb-4">Evaluación</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Pon a Prueba tus Conocimientos
+                    </h2>
+                    <p class="text-white/80 text-lg">Responde estas 3 preguntas y descubre cuánto has aprendido sobre
+                        diseño organizacional.</p>
+                </div>
+
+                <div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-2xl p-8 md:p-10"
+                    id="quiz-form-container">
+                    <form id="quiz-form">
+                        <div class="quiz-question mb-8" data-question="1">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-start gap-3">
+                                <span
+                                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-sm flex-shrink-0">1</span>
+                                ¿Qué tipo de estructura organizacional agrupa a las personas por especialidad o función?
+                            </h3>
+                            <div class="space-y-3 ml-11">
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q1" value="a" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Estructura Lineal</span>
+                                </label>
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q1" value="b" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Estructura Funcional</span>
+                                </label>
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q1" value="c" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Estructura Matricial</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question mb-8" data-question="2">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-start gap-3">
+                                <span
+                                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-sm flex-shrink-0">2</span>
+                                ¿Quién dijo la famosa frase "La estructura sigue a la estrategia"?
+                            </h3>
+                            <div class="space-y-3 ml-11">
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q2" value="a" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Frederick Taylor</span>
+                                </label>
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q2" value="b" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Alfred Chandler</span>
+                                </label>
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q2" value="c" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Peter Drucker</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question mb-8" data-question="3">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-start gap-3">
+                                <span
+                                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-sm flex-shrink-0">3</span>
+                                ¿Cuáles son los 5 componentes del Modelo Estrella en diseño organizacional?
+                            </h3>
+                            <div class="space-y-3 ml-11">
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q3" value="a" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Ventas, Marketing, Finanzas, RRHH,
+                                        Producción</span>
+                                </label>
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q3" value="b" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Estrategia, Estructura, Procesos,
+                                        Recompensas, Personas</span>
+                                </label>
+                                <label
+                                    class="quiz-option flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    <input type="radio" name="q3" value="c" class="w-5 h-5 text-primary">
+                                    <span class="text-slate-700 dark:text-slate-300">Misión, Visión, Valores, Objetivos,
+                                        Metas</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-primary hover:bg-primary-dark text-white text-base font-bold py-4 px-8 rounded-xl transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">send</span>
+                            Enviar Respuestas
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Result Modal -->
+                <div class="fixed inset-0 z-50 hidden" id="result-modal">
+                    <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm" id="modal-overlay"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-6">
+                        <div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-8 text-center"
+                            id="result-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[22px]">domain</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold font-serif">OrgDesign</span>
+                            <span class="block text-[10px] uppercase tracking-[0.2em] text-slate-400">Magazine</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 max-w-md">
+                        Recursos premium para líderes que construyen las organizaciones del mañana.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Explorar</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#hero" class="hover:text-primary transition-colors">Portada</a></li>
+                        <li><a href="#indice" class="hover:text-primary transition-colors">Índice</a></li>
+                        <li><a href="#quiz" class="hover:text-primary transition-colors">Quiz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">Privacidad</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Términos</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-slate-500 text-sm">
+                © 2026 OrgDesign Magazine. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
