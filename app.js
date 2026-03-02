@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initQuiz();
     initSmoothScroll();
+    initMascota();
 });
 
 // ============================================
@@ -246,4 +247,88 @@ function initQuiz() {
             closeModal();
         }
     });
+}
+
+// ============================================
+// Mascota System
+// ============================================
+function initMascota() {
+    const svgContainer = document.getElementById('mascota-svg');
+    const bubble = document.getElementById('mascota-bubble');
+    const text = document.getElementById('mascota-text');
+    
+    svgContainer.innerHTML = `<img src="perro chiba inu.svg" alt="Mascota" class="w-full h-full object-contain rounded-full" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">`;
+
+    const comments = {
+        'hero': '¡Bienvenido a este viaje por el diseño organizacional!',
+        'indice': 'Hay tanto que explorar... ¿por dónde empiezas?',
+        'article-1': 'De pirámides a redes... ¡qué evolución!',
+        'article-2': 'Las estructuras son como esqueletos, ¡dan forma!',
+        'article-3': '¿Forma o estructura? Son cosas distintas, ¡mira!',
+        'article-4': 'El proceso de diseño paso a paso...',
+        'article-5': 'Diseño = proceso, Estructura = resultado',
+        'article-6': 'Tres pilares: Estrategia, Tamaño, Tecnología',
+        'quiz': '¡A ver si dominas el tema!'
+    };
+
+    let currentSection = 'hero';
+    let hideTimeout;
+
+    function showComment(section) {
+        if (hideTimeout) clearTimeout(hideTimeout);
+        
+        const svgEl = document.getElementById('mascota-svg');
+        svgEl.classList.add('bouncing');
+        setTimeout(() => svgEl.classList.remove('bouncing'), 500);
+
+        text.textContent = comments[section] || '';
+        bubble.classList.add('visible');
+
+        hideTimeout = setTimeout(() => {
+            bubble.classList.remove('visible');
+        }, 4000);
+    }
+
+    function getCurrentSection() {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        if (scrollY < windowHeight * 0.5) return 'hero';
+        
+        const sections = ['article-1', 'article-2', 'article-3', 'article-4', 'article-5', 'article-6', 'quiz'];
+        
+        for (const id of sections) {
+            const el = document.getElementById(id);
+            if (el) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < windowHeight * 0.6 && rect.bottom > windowHeight * 0.2) {
+                    return id;
+                }
+            }
+        }
+
+        const indice = document.getElementById('indice');
+        if (indice) {
+            const rect = indice.getBoundingClientRect();
+            if (rect.top < windowHeight * 0.6 && rect.bottom > windowHeight * 0.2) {
+                return 'indice';
+            }
+        }
+
+        return currentSection;
+    }
+
+    function handleScroll() {
+        const newSection = getCurrentSection();
+        if (newSection !== currentSection) {
+            currentSection = newSection;
+            showComment(currentSection);
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    setTimeout(() => {
+        showComment('hero');
+    }, 1500);
 }
