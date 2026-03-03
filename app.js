@@ -264,7 +264,8 @@ function initMascota() {
         'indice': 'Hay tanto que explorar... ¿por dónde empiezas?',
         'article-1': 'De pirámides a redes... ¡qué evolución!',
         'article-2': 'Las estructuras son como esqueletos, ¡dan forma!',
-        'article-3': '¿Forma o estructura? Son cosas distintas, ¡mira!',
+        'article-3': '¡Las organizaciones también necesitan código! Una buena arquitectura hace la diferencia entre el éxito y el caos.',
+        'article-3-scrum': '¡Scrum es un marco de trabajo ágil! Equipos autodirigidos que iteran rápidamente para entregar valor en cada sprint.',
         'article-4': 'El proceso de diseño paso a paso...',
         'article-5': 'Diseño = proceso, Estructura = resultado',
         'article-6': 'Tres pilares: Estrategia, Tamaño, Tecnología',
@@ -293,6 +294,15 @@ function initMascota() {
         const scrollY = window.scrollY;
         const windowHeight = window.innerHeight;
 
+        // Check for sub-section "vision-y-metas" inside article-3
+        const visionYMetas = document.getElementById('vision-y-metas');
+        if (visionYMetas) {
+            const rect = visionYMetas.getBoundingClientRect();
+            if (rect.top < windowHeight * 0.6 && rect.bottom > windowHeight * 0.2) {
+                return 'article-3-scrum';
+            }
+        }
+        
         if (scrollY < windowHeight * 0.5) return 'hero';
         
         const sections = ['article-1', 'article-2', 'article-3', 'article-4', 'article-5', 'article-6', 'quiz'];
