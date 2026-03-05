@@ -257,19 +257,28 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <a href="#editorial"
-                        class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll"
+                        class="index-card group col-span-1 md:col-span-2 lg:col-span-3 relative bg-gradient-to-br from-[#1152d4] via-[#1e40af] to-[#0f766e] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 animate-on-scroll"
                         style="animation-delay: 0s">
-                        <div
-                            class="h-32 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
-                            <span
-                                class="material-symbols-outlined text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500">edit_note</span>
-                            <span class="absolute top-3 left-3 text-4xl font-serif font-bold text-primary/20">00</span>
-                        </div>
-                        <div class="p-5">
-                            <h3
-                                class="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
-                                Editorial</h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">La estructura como ventaja estratégica.</p>
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSJub25lIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz4KPC9zdmc+')] opacity-50"></div>
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div
+                                class="h-40 md:h-48 lg:h-40 md:w-72 flex-shrink-0 bg-white/10 backdrop-blur-sm flex items-center justify-center relative overflow-hidden border-r border-white/20">
+                                <span
+                                    class="material-symbols-outlined text-8xl text-white/80 group-hover:scale-110 transition-transform duration-500">edit_note</span>
+                                <span class="absolute top-3 left-3 text-6xl font-serif font-bold text-white/40">00</span>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+                            </div>
+                            <div class="p-6 md:p-8 flex flex-col justify-center flex-1 text-center md:text-left">
+                                <span class="inline-block self-start md:self-start px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold tracking-widest uppercase rounded-full mb-3">Editorial</span>
+                                <h3
+                                    class="font-serif text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
+                                    La estructura como ventaja estratégica
+                                </h3>
+                                <p class="text-white/80 text-base">Descubre por qué la organización va más allá de un simple organigrama.</p>
+                                <span class="mt-4 inline-flex items-center gap-2 text-amber-300 font-medium group-hover:translate-x-2 transition-transform">
+                                    Leer editorial <span class="material-symbols-outlined text-xl">arrow_forward</span>
+                                </span>
+                            </div>
                         </div>
                     </a>
 
