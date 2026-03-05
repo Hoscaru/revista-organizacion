@@ -308,16 +308,27 @@ function initMascota() {
     svgContainer.innerHTML = `<img src="perro chiba inu.svg" alt="Mascota" class="w-full h-full object-contain rounded-full" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">`;
 
     const comments = {
-        'hero': '¡Bienvenido a un viaje por el diseño organizacional! Descubrirás cómo las organizaciones pueden transformarse.',
-        'indice': '6 artículos esperan por ti. ¿Listo para explorar las formas de organización?',
-        'article-1': 'Harold Koontz, Heinz Weihrich y Mark Cannice te esperan para hablar de formas de organización.',
-        'article-2': 'Max Weber, Fayol, Drucker y Mintzberg revelan los secretos de la estructura organizacional.',
-        'article-3': 'Arquitectura de Código Humano: programando organizaciones para el éxito.',
-        'article-3-scrum': '¡Scrum es un marco de trabajo ágil! Equipos autodirigidos que iteran rápidamente para entregar valor.',
-        'article-4': 'Henry Mintzberg y Alfred Chandler te explican la arquitectura de negocios del siglo XXI.',
-        'article-5': '¡Arquitectura Mutante! Diferenciación, formalización, centralización e integración en evolución constante.',
-        'article-6': 'Los Tres Pilares: Estrategia, Tamaño y Tecnología. La clave de toda estructura organizacional.',
-        'quiz': '¡Pon a prueba lo que aprendiste! 6 preguntas te esperan.'
+        'hero': '¡Bienvenido a Horizonte Gerencial! Descubrirás cómo las organizaciones pueden transformarse para competir en el siglo XXI.',
+        'indice': '6 artículos esperan por ti. Desde formas de organización hasta arquitectura mutante, ¿por dónde empiezas?',
+        
+        // Artículos
+        'article-1': 'Harold Koontz, Heinz Weihrich y Mark Cannice te revelan las formas de organización: funcional, divisional, matricial y más.',
+        'article-2': 'Max Weber, Fayol, Drucker y Mintzberg revelan los secretos de la estructura. La burocracia, la administración clásica y el modelo estrella.',
+        'article-3': 'Arquitectura de Código Humano: programando organizaciones con división del trabajo, autoridad, responsabilidad y coordinación.',
+        'article-3-scrum': '¡Scrum es un marco de trabajo ágil! Equipos autodirigidos que iteran rápidamente para entregar valor en cada sprint.',
+        'article-4': 'Henry Mintzberg y Alfred Chandler te explican la arquitectura de negocios. Los parámetros de diseño: formalización, especialización, centralización.',
+        'article-5': '¡Arquitectura Mutante! Diferenciación, formalización, centralización e integración en evolución constante. La tensión estructura vs diseño.',
+        'article-6': 'Los Tres Pilares: Estrategia (el qué), Tamaño (el cuánto) y Tecnología (el cómo). La clave de toda estructura organizacional.',
+        
+        // Publicidades
+        'pub-coca-1': 'Coca-Cola: Refrescando momentos de productividad en tu lectura.',
+        'pub-coca-2': 'Coca-Cola: Comparte el éxito de tu nueva estructura organizacional.',
+        'pub-corpoelec-1': 'Corpoelec: La energía que mantiene encendida a tu organización.',
+        'pub-corpoelec-2': 'Corpoelec: Iluminando el camino hacia una gestión eficiente.',
+        
+        // Contraportada y Quiz
+        'contraportada': 'Universidad de Oriente, Núcleo Anzoátegui. El conocimiento que potencia líderes.',
+        'quiz': '¡Pon a prueba lo que aprendiste! 6 preguntas sobre diseño organizacional te esperan.'
     };
 
     let currentSection = 'hero';
@@ -353,7 +364,7 @@ function initMascota() {
         
         if (scrollY < windowHeight * 0.5) return 'hero';
         
-        const sections = ['article-1', 'article-2', 'article-3', 'article-4', 'article-5', 'article-6', 'quiz'];
+        const sections = ['article-1', 'pub-coca-1', 'article-2', 'pub-corpoelec-1', 'article-3', 'article-4', 'article-5', 'pub-coca-2', 'article-6', 'pub-corpoelec-2', 'quiz', 'contraportada'];
         
         for (const id of sections) {
             const el = document.getElementById(id);
