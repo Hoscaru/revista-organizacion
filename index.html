@@ -140,51 +140,57 @@
     <!-- FLOATING TABLE OF CONTENTS -->
     <aside class="fixed right-6 top-1/2 -translate-y-1/2 z-30 hidden lg:block" id="floating-toc">
         <div
-            class="bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 p-4">
-            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-3">Contenido</p>
-            <nav class="space-y-1" id="toc-nav">
-                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+            class="bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 p-2 transition-all duration-300"
+            id="toc-container">
+            <div class="flex items-center justify-between mb-2" id="toc-header">
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Contenido</p>
+                <button id="toc-toggle" class="text-slate-400 hover:text-primary transition-colors p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <span class="material-symbols-outlined text-[18px]" id="toc-toggle-icon">chevron_right</span>
+                </button>
+            </div>
+            <nav class="space-y-0.5" id="toc-nav">
+                <a class="toc-link flex items-center gap-2 px-2 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
                     href="#article-1">
                     <span
-                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">01</span>
-                    Visión
+                        class="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[9px]">01</span>
+                    <span class="toc-text">Formas de Organización</span>
                 </a>
-                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                <a class="toc-link flex items-center gap-2 px-2 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
                     href="#article-2">
                     <span
-                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">02</span>
-                    Estructura
+                        class="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[9px]">02</span>
+                    <span class="toc-text">El Esqueleto de la Empresa</span>
                 </a>
-                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                <a class="toc-link flex items-center gap-2 px-2 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
                     href="#article-3">
                     <span
-                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">03</span>
-                    Código Humano
+                        class="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[9px]">03</span>
+                    <span class="toc-text">Código Humano</span>
                 </a>
-                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                <a class="toc-link flex items-center gap-2 px-2 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
                     href="#article-4">
                     <span
-                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">04</span>
-                    Proceso
+                        class="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[9px]">04</span>
+                    <span class="toc-text">Arquitectura de Negocios</span>
                 </a>
-                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                <a class="toc-link flex items-center gap-2 px-2 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
                     href="#article-5">
                     <span
-                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">05</span>
-                    Diseño
+                        class="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[9px]">05</span>
+                    <span class="toc-text">Diseño vs Estructura</span>
                 </a>
-                <a class="toc-link flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                <a class="toc-link flex items-center gap-2 px-2 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
                     href="#article-6">
                     <span
-                        class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px]">06</span>
-                    Pilares
+                        class="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[9px]">06</span>
+                    <span class="toc-text">Los Tres Pilares</span>
                 </a>
             </nav>
-            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
-                <a class="flex items-center gap-2 px-3 py-2 text-xs font-bold text-primary hover:bg-primary/10 transition-colors rounded-lg"
+            <div class="mt-2 pt-2 border-t border-slate-200 dark:border-slate-700">
+                <a class="flex items-center gap-2 px-2 py-1.5 text-xs font-bold text-primary hover:bg-primary/10 transition-colors rounded-lg"
                     href="#quiz">
-                    <span class="material-symbols-outlined text-[16px]">quiz</span>
-                    Hacer Quiz
+                    <span class="material-symbols-outlined text-[14px]">quiz</span>
+                    <span class="toc-text">Hacer Quiz</span>
                 </a>
             </div>
         </div>

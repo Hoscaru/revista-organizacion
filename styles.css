@@ -359,3 +359,21 @@ img[loading] {
 #mascota-svg:hover {
     animation: mascotWiggle 0.3s ease-in-out infinite;
 }
+
+/* Floating TOC Collapse Styles */
+#toc-container.collapsed {
+    overflow: visible;
+}
+
+#toc-container.collapsed .toc-link {
+    justify-content: center;
+    padding: 4px 2px;
+}
+
+#toc-container.collapsed .toc-link span:first-child {
+    margin: 0;
+}
+
+#toc-container.collapsed .toc-text {
+    display: none;
+}
