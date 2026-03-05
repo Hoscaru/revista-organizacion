@@ -122,7 +122,7 @@
                     </span>
                     <span class="flex items-center gap-2">
                         <span class="material-symbols-outlined text-[18px]">auto_stories</span>
-                        6 Artículos
+                        7 Artículos
                     </span>
                     <span class="flex items-center gap-2">
                         <span class="material-symbols-outlined text-[18px]">schedule</span>
@@ -134,6 +134,45 @@
 
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
             <span class="material-symbols-outlined text-white/50 text-3xl">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+    <!-- EDITORIAL SECTION -->
+    <section id="editorial" class="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800/50 dark:to-slate-900/50 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+                <div class="p-8 md:p-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="px-3 py-1 text-xs font-bold tracking-widest text-primary uppercase bg-primary/10 rounded-full">Editorial</span>
+                    </div>
+                    
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8 leading-tight">
+                        La estructura como ventaja estratégica
+                    </h2>
+
+                    <div class="article-content text-lg text-slate-700 dark:text-slate-300 leading-relaxed space-y-6">
+                        <p class="first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">
+                            En la gestión organizacional moderna, uno de los errores más frecuentes consiste en reducir la organización a un simple organigrama.
+                        </p>
+                        <p>
+                            Sin embargo, organizar significa diseñar el sistema mediante el cual la estrategia se convierte en acción coordinada. Desde los planteamientos clásicos de Harold Koontz y Heinz Weihrich hasta los análisis estructurales de Henry Mintzberg, la estructura organizacional se concibe como una arquitectura deliberada de roles, jerarquías, flujos de información y mecanismos de coordinación que orientan el esfuerzo colectivo hacia el logro de objetivos.
+                        </p>
+                        <p>
+                            No obstante, el diseño organizacional no es únicamente un ejercicio técnico. Cada decisión estructural influye directamente en la cultura, la comunicación y la forma en que las personas participan en la toma de decisiones. Por ello, comprender las distintas configuraciones organizacionales y su relación con variables como la estrategia, el tamaño o la tecnología se ha convertido en una competencia gerencial fundamental. Diseñar estructuras efectivas implica encontrar un equilibrio entre control y flexibilidad, autoridad y autonomía, formalización e innovación.
+                        </p>
+                        <p>
+                            Desde esta perspectiva, la estructura organizacional debe entenderse como un elemento estratégico más que como un mecanismo administrativo. Con nuestra revista "Horizonte Gerencial", buscamos incentivar un pensamiento claro: una organización bien alineada no solo facilita la coordinación de recursos y el control interno, sino que también puede convertirse en un motor para la innovación, la eficiencia operativa y la generación sostenible de valor institucional.
+                        </p>
+                    </div>
+
+                    <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-700">
+                        <p class="text-slate-500 dark:text-slate-400 font-medium">
+                            — Equipo Editorial <span class="font-serif italic">Horizonte Gerencial</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -149,6 +188,12 @@
                 </button>
             </div>
             <nav class="space-y-0.5" id="toc-nav">
+                <a class="toc-link flex items-center gap-2 px-2 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                    href="#editorial">
+                    <span
+                        class="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[9px]">00</span>
+                    <span class="toc-text">Editorial</span>
+                </a>
                 <a class="toc-link flex items-center gap-2 px-2 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
                     href="#article-1">
                     <span
@@ -211,6 +256,23 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="#editorial"
+                        class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll"
+                        style="animation-delay: 0s">
+                        <div
+                            class="h-32 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
+                            <span
+                                class="material-symbols-outlined text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500">edit_note</span>
+                            <span class="absolute top-3 left-3 text-4xl font-serif font-bold text-primary/20">00</span>
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                                Editorial</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">La estructura como ventaja estratégica.</p>
+                        </div>
+                    </a>
+
                     <a href="#article-1"
                         class="index-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-on-scroll">
                         <div
