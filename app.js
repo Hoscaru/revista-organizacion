@@ -205,7 +205,10 @@ function initQuiz() {
     const correctAnswers = {
         q1: 'b',
         q2: 'b',
-        q3: 'b'
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
     };
 
     form.addEventListener('submit', (e) => {
@@ -213,7 +216,7 @@ function initQuiz() {
 
         const formData = new FormData(form);
         let score = 0;
-        const totalQuestions = 3;
+        const totalQuestions = 6;
 
         for (let i = 1; i <= totalQuestions; i++) {
             const answer = formData.get(`q${i}`);
@@ -305,16 +308,16 @@ function initMascota() {
     svgContainer.innerHTML = `<img src="perro chiba inu.svg" alt="Mascota" class="w-full h-full object-contain rounded-full" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">`;
 
     const comments = {
-        'hero': '¡Bienvenido a este viaje por el diseño organizacional!',
-        'indice': 'Hay tanto que explorar... ¿por dónde empiezas?',
-        'article-1': 'De pirámides a redes... ¡qué evolución!',
-        'article-2': 'Las estructuras son como esqueletos, ¡dan forma!',
-        'article-3': '¡Las organizaciones también necesitan código! Una buena arquitectura hace la diferencia entre el éxito y el caos.',
-        'article-3-scrum': '¡Scrum es un marco de trabajo ágil! Equipos autodirigidos que iteran rápidamente para entregar valor en cada sprint.',
-        'article-4': 'El proceso de diseño paso a paso...',
-        'article-5': 'Diseño = proceso, Estructura = resultado',
-        'article-6': 'Tres pilares: Estrategia, Tamaño, Tecnología',
-        'quiz': '¡A ver si dominas el tema!'
+        'hero': '¡Bienvenido a un viaje por el diseño organizacional! Descubrirás cómo las organizaciones pueden transformarse.',
+        'indice': '6 artículos esperan por ti. ¿Listo para explorar las formas de organización?',
+        'article-1': 'Harold Koontz, Heinz Weihrich y Mark Cannice te esperan para hablar de formas de organización.',
+        'article-2': 'Max Weber, Fayol, Drucker y Mintzberg revelan los secretos de la estructura organizacional.',
+        'article-3': 'Arquitectura de Código Humano: programando organizaciones para el éxito.',
+        'article-3-scrum': '¡Scrum es un marco de trabajo ágil! Equipos autodirigidos que iteran rápidamente para entregar valor.',
+        'article-4': 'Henry Mintzberg y Alfred Chandler te explican la arquitectura de negocios del siglo XXI.',
+        'article-5': '¡Arquitectura Mutante! Diferenciación, formalización, centralización e integración en evolución constante.',
+        'article-6': 'Los Tres Pilares: Estrategia, Tamaño y Tecnología. La clave de toda estructura organizacional.',
+        'quiz': '¡Pon a prueba lo que aprendiste! 6 preguntas te esperan.'
     };
 
     let currentSection = 'hero';
